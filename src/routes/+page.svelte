@@ -28,8 +28,8 @@ return async ({ action, result }) => {
 </script>
 
 
-<section class="w-full p-8 max-w-xl m-auto">
-  <h1 class="prose text-3xl lg:text-5xl mb-4 text-center">🤖 Draft Project Descriptorator</h1>
+<section class="w-full p-8 max-w-2xl m-auto">
+  <h1 class="prose text-3xl lg:text-4xl mb-4">🤖 Draft Project Descriptorator</h1>
 
   {#if loading === false}
       <section id="form-box" class="prose mb-8">
