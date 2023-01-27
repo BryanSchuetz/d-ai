@@ -5,7 +5,10 @@ const config = {
     extend: {},
   },
 
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+  ],
 };
 
 module.exports = config;
