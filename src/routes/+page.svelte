@@ -12,7 +12,6 @@ return async ({ action, result }) => {
           let resultObject = JSON.parse(JSON.stringify(result));
 
           if (action.search == "?/submit") {
-            console.log(resultObject);
               if (resultObject.status == 200) {
                   if (resultObject.data.response) {
                       answer = resultObject.data.response;
