@@ -13,13 +13,13 @@ export const actions: Actions = {
         const openai = new OpenAIApi(configuration);
 
         const textResponse = await openai.createCompletion({
-            model: "davinci:ft-tinyquark-2023-01-28-20-01-11",
-            prompt: textPrompt,
+            model: "davinci:ft-tinyquark-2023-02-16-19-24-41",
+            prompt: `${textPrompt}\n\n###\n\n`,
             temperature: 0.4,
-            max_tokens: 600,
-            top_p: 1,
+            max_tokens: 800,
             frequency_penalty: 0.25,
             presence_penalty: 0,
+            stop: ["###"],
         });
 
         return {
