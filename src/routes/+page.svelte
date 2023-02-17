@@ -10,7 +10,6 @@
 
 return async ({ action, result }) => {
           let resultObject = JSON.parse(JSON.stringify(result));
-
           if (action.search == "?/submit") {
               if (resultObject.status == 200) {
                   if (resultObject.data.response) {
@@ -61,7 +60,7 @@ return async ({ action, result }) => {
           <div class="box">
               <h2 class="mb-4"><b>Draft Description:</b></h2>
 
-              <p>{answer}</p>
+              <div style="white-space: pre-wrap;">{answer}</div>
           </div>
       {/if}
   {:else}
