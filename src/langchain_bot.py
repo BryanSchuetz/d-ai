@@ -5,6 +5,7 @@ import requests
 from langchain.vectorstores.faiss import FAISS
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.text_splitter import CharacterTextSplitter
+from langchain.prompts import PromptTemplate
 
 def get_dai_data(page):
   url = f"{page}"
@@ -369,8 +370,9 @@ for source in sources:
         source_chunks.append(Document(page_content=chunk, metadata=source.metadata))
 
 search_index = FAISS.from_documents(source_chunks, OpenAIEmbeddings())
-
-chain = load_qa_with_sources_chain(OpenAI(model_name="text-davinci-003", max_tokens=1200, temperature=0))
+template = """Generate a blog post with the title '{question}'. The post should be at least 2000 words long. {summaries}"""
+PROMPT = PromptTemplate(template=template, input_variables=["summaries", "question"])
+chain = load_qa_with_sources_chain(OpenAI(model_name="text-davinci-003", max_tokens=1200, temperature=0.9), chain_type="stuff", prompt=PROMPT)
 
 def print_answer(question):
   print(
