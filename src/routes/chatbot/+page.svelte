@@ -98,7 +98,7 @@ return async ({ action, result }) => {
 
       <div class="spinner max-w-md m-auto items-center">
         <svg class="m-auto" width="100" height="100" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_HIK5{transform-origin:center;animation:spinner_XVY9 1s cubic-bezier(0.36,.6,.31,1) infinite}@keyframes spinner_XVY9{50%{transform:rotate(180deg)}100%{transform:rotate(360deg)}}</style><circle cx="12" cy="12" r="3"/><g class="spinner_HIK5"><circle cx="4" cy="12" r="3"/><circle cx="20" cy="12" r="3"/></g></svg>
-        <h2 class="text-center">One moment, your prompt is being used to query <a target="_blank" class="text-blue-500 hover:text-blue-700" href="https://www.pinecone.io/learn/vector-embeddings/">a vector database</a> of DAI primary sources. Returned will be a collection of near sources for use by the OpenAI model when generating your text.</h2>
+        <h2 class="text-center">One moment, your prompt is being used to query <a target="_blank" rel="noreferrer" class="text-blue-500 hover:text-blue-700" href="https://www.pinecone.io/learn/vector-embeddings/">a vector database</a> of DAI primary sources. Returned will be a collection of near sources for use by the OpenAI model when generating your text.</h2>
       </div>
   {/if}
 </section>
