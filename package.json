@@ -16,6 +16,7 @@
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.7",
+    "langchain": "^0.0.53",
     "openai": "^3.1.0",
     "postcss": "^8.4.14",
     "postcss-load-config": "^4.0.1",
@@ -29,6 +30,7 @@
   },
   "type": "module",
   "dependencies": {
-    "langchain": "^0.0.53"
+    "@pinecone-database/pinecone": "^0.1.5",
+    "dotenv": "^16.0.3"
   }
 }
