@@ -10,6 +10,7 @@ import type { Actions } from './$types';
 import { PromptTemplate } from "langchain/prompts";
 
 //Init a pincecone client and the vector store as a source for an OPENAI chain
+
   const client = new PineconeClient();
   await client.init({
     apiKey: PINECONE_API_KEY,
@@ -17,7 +18,7 @@ import { PromptTemplate } from "langchain/prompts";
   });
   const pineconeIndex = client.Index('daisources');
   const vectorStore = await PineconeStore.fromExistingIndex(
-    new OpenAIEmbeddings(),
+    new OpenAIEmbeddings({openAIApiKey: OPENAI_API_KEY}),
     { pineconeIndex }
   );
 
