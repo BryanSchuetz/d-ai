@@ -89,7 +89,7 @@ return async ({ action, result }) => {
                     {/if}
                   {/each} 
                   {#each sources.filter((value, index) => sources.indexOf(value) === index) as source}
-                    <li><a href="https://github.com/bryanschuetz/d-ai-sources/blob/master/{source}">{source.replace('.md', '')}</a></li>
+                    <li><a target="_blank" rel="noreferrer" href="https://raw.githubusercontent.com/bryanschuetz/d-ai-sources/master/{source}">{source.replace('.md', '')}</a></li>
                   {/each}
                 </ul>
               </div>
