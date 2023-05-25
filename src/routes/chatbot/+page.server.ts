@@ -29,13 +29,13 @@ export const actions: Actions = {
 
       //Call and configure our chain 
       const model = new OpenAI({
-        modelName: "text-davinci-003",
+        modelName: "gpt-4",
         temperature: 0.9,
         openAIApiKey: OPENAI_API_KEY
       });
       const template = `Given the provided context, respond to requests with generated text and sources. ALWAYS return a SOURCES part in your answer along with the generated text. If you don't know the answer to the question, just say 'I don't know about that'. DO NOT invent answers or sources.\n`;
       const prompt = new PromptTemplate({template: template, inputVariables: []});
-      const chain = RetrievalQAChain.fromLLM(model, vectorStore.asRetriever(), {returnSourceDocuments: true});
+      const chain = RetrievalQAChain.fromLLM(model, vectorStore.asRetriever(8), {returnSourceDocuments: true});
       //Wait for the form to be submitted and send the prompot to the chain
       const textResponse = await chain.call({
           query: `${textPrompt}\n\n###\n\n`,
