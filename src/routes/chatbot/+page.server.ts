@@ -29,7 +29,7 @@ export const actions: Actions = {
 
       //Call and configure our chain 
       const model = new OpenAI({
-        modelName: "gpt-4",
+        modelName: "text-davinci-003",
         temperature: 0.9,
         openAIApiKey: OPENAI_API_KEY
       });
