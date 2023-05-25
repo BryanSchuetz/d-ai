@@ -8,7 +8,7 @@ import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 
 const client = new PineconeClient();
 await client.init({
-  apiKey: '5f15935a-8d62-4346-b9c0-4aa89911c9ff',
+  apiKey: '',
   environment: 'asia-southeast1-gcp-free',
 });
 const pineconeIndex = client.Index('daisources');
