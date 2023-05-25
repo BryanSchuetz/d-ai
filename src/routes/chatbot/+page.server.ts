@@ -35,7 +35,7 @@ export const actions: Actions = {
       });
       const template = `Given the provided context, respond to requests with generated text and sources. ALWAYS return a SOURCES part in your answer along with the generated text. If you don't know the answer to the question, just say 'I don't know about that'. DO NOT invent answers or sources.\n`;
       const prompt = new PromptTemplate({template: template, inputVariables: []});
-      const chain = RetrievalQAChain.fromLLM(model, vectorStore.asRetriever(8), {returnSourceDocuments: true});
+      const chain = RetrievalQAChain.fromLLM(model, vectorStore.asRetriever(6), {returnSourceDocuments: true});
       //Wait for the form to be submitted and send the prompot to the chain
       const textResponse = await chain.call({
           query: `${textPrompt}\n\n###\n\n`,
