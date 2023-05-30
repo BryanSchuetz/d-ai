@@ -41,7 +41,7 @@ return async ({ action, result }) => {
         </svg>        
       </div>
       <div>
-        <h1 class="prose text-3xl lg:text-4xl mb-0">D-AI Writting Assistant</h1>
+        <h1 class="prose text-3xl lg:text-4xl mb-0">D-AI Writing Assistant</h1>
       </div>
       </div>
 
